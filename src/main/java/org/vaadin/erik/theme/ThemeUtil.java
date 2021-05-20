@@ -1,6 +1,7 @@
 package org.vaadin.erik.theme;
 
 import com.vaadin.flow.component.UI;
+import com.vaadin.flow.server.VaadinSession;
 
 /**
  * @author erik@vaadin.com
@@ -8,21 +9,15 @@ import com.vaadin.flow.component.UI;
  */
 public class ThemeUtil {
 
-    public enum Theme {
-        STANDARD("Standard"), CARROT_INC("Carrot Inc"), CLEAN("Clean");
-
-        private final String name;
-
-        Theme(String name) {
-            this.name = name;
-        }
-
-        public String getThemeName() {
-            return name;
-        }
-    }
+    private static final String THEME_ATTRIBUTE = "theme";
 
     public static void selectTheme(Theme theme) {
+        VaadinSession.getCurrent().setAttribute(THEME_ATTRIBUTE, theme);
         UI.getCurrent().getElement().setAttribute("theme", theme.name().toLowerCase());
+    }
+
+    public static Theme getCurrentTheme() {
+        Theme theme = (Theme) VaadinSession.getCurrent().getAttribute(THEME_ATTRIBUTE);
+        return theme != null ? theme : Theme.CARROT_INC;
     }
 }
