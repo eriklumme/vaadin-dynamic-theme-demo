@@ -1,0 +1,6 @@
+[part="navbar"]::before {
+    background: var(
+            --clean-navbar-before-background,
+            var(--lumo-base-color) linear-gradient(var(--lumo-contrast-5pct), var(--lumo-contrast-5pct))
+    );
+}

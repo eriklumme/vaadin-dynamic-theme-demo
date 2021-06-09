@@ -11,3 +11,33 @@ body[theme~="carrot_inc"] [theme~="dark"] {
     --lumo-base-color: #d25700;
     --lumo-primary-text-color: #ffa84a;
 }
+
+body[theme~="clean"] {
+    --text-color: var(--lumo-primary-text-color);
+}
+
+body[theme~="clean"] {
+    --clean-navbar-before-background: none;
+    --_lumo-button-primary-background-color: transparent;
+    --_lumo-button-color: black;
+    --_lumo-button-primary-color: black;
+}
+
+body[theme~="clean"] vaadin-tab[selected]{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+body[theme~="clean"] [theme~="dark"] {
+    --lumo-base-color: rgba(0, 0, 0, 0);
+    --lumo-box-shadow-s: none;
+    --lumo-primary-text-color: black;
+    --lumo-header-text-color: black;
+}
+
+body[theme~="clean"] .editor-layout {
+    background: none;
+}
+
+body[theme~="clean"] vaadin-text-field, body[theme~="clean"] vaadin-date-picker {
+    --lumo-contrast-10pct: transparent;
+}
