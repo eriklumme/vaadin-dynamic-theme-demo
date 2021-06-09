@@ -2,6 +2,12 @@
 @import url('lumo-css-framework/all-classes.css');
 
 body[theme~="carrot_inc"] {
+    --lumo-base-color: #ffa84a;
     --lumo-primary-color: orange;
-    --lumo-secondary-color: orange;
+    --lumo-primary-text-color: #d25700;
+}
+
+body[theme~="carrot_inc"] [theme~="dark"] {
+    --lumo-base-color: #d25700;
+    --lumo-primary-text-color: #ffa84a;
 }
