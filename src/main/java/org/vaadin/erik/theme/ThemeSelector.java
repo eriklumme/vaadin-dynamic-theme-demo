@@ -16,18 +16,19 @@ public class ThemeSelector extends Tabs {
         addThemeVariants(TabsVariant.LUMO_MINIMAL);
         setId("tabs");
         addSelectedChangeListener(e -> {
+            // Don't fire when we call setSelectedTab(tab) in the for-loop below
             if (e.isFromClient()) {
                 Theme theme = ComponentUtil.getData(e.getSelectedTab(), Theme.class);
                 ThemeUtil.selectTheme(theme);
             }
         });
 
+        Theme currentTheme = ThemeUtil.getCurrentTheme();
         for (Theme theme: Theme.values()) {
             Tab tab = new Tab(theme.getCaption());
             ComponentUtil.setData(tab, Theme.class, theme);
             add(tab);
 
-            Theme currentTheme = ThemeUtil.getCurrentTheme();
             if (currentTheme == theme) {
                 setSelectedTab(tab);
             }
