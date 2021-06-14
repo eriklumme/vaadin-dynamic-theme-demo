@@ -33,6 +33,10 @@ body[theme~="clean"] {
     --navbar-background: none;
 }
 
+body[theme~="clean"] vaadin-app-layout::part(navbar)::before {
+    background: var(--navbar-background);
+}
+
 body[theme~="clean"] vaadin-tab[selected]{
     background-color: rgba(0, 0, 0, 0);
 }
