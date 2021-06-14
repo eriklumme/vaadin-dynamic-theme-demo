@@ -1,11 +1,11 @@
 # Dynamic Theme Demo
 
-This is an example project that can be used as a starting point to create your own Vaadin application with Spring Boot.
-It contains all the necessary configuration and some placeholder files to get you started.
+This project showcases dynamic theming in Vaadin Flow.
 
-The project is a standard Maven project, so you can import it to your IDE of choice. [Read more how to set up a development environment](https://vaadin.com/docs/v14/flow/installing/installing-overview.html) for Vaadin projects (Windows, Linux, macOS). 
+The `ThemeUtil` and `ThemeSelector` classes allow dynamically changing the theme, by setting an attribute on the `body` element.
+The styles in `/frontend/themes/dynamicthemedemo` depend on this attribute.
 
-This project was created from https://start.vaadin.com.
+The `ThemeBoostrapListener` is used to set the initial attribute on page load.
 
 ## Running and debugging the application
 
