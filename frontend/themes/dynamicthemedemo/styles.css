@@ -2,25 +2,28 @@
 @import url('lumo-css-framework/all-classes.css');
 
 body[theme~="carrot_inc"] {
-    --lumo-base-color: #ffa84a;
-    --lumo-primary-color: orange;
-    --lumo-primary-text-color: #d25700;
+    --yellow-carrot: #ffa84a;
+    --orange-carrot: #d25700;
+
+    --lumo-base-color: var(--yellow-carrot);
+    --lumo-primary-color: var(--yellow-carrot);
+    --lumo-primary-text-color: var(--orange-carrot);
 }
 
 body[theme~="carrot_inc"] [theme~="dark"] {
-    --lumo-base-color: #d25700;
-    --lumo-primary-text-color: #ffa84a;
+    --lumo-base-color: var(--orange-carrot);
+    --lumo-primary-text-color: var(--yellow-carrot);
 }
 
 body[theme~="clean"] {
+    --lumo-primary-text-color: black;
     --text-color: var(--lumo-primary-text-color);
-}
-
-body[theme~="clean"] {
-    --clean-navbar-before-background: none;
     --_lumo-button-primary-background-color: transparent;
     --_lumo-button-color: black;
     --_lumo-button-primary-color: black;
+
+    --clean-navbar-before-background: none;
+    --clean-overlay-background-image: none;
 }
 
 body[theme~="clean"] vaadin-tab[selected]{

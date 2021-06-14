@@ -1,0 +1,4 @@
+:host {
+    background-image: var(--clean-overlay-background-image,
+        linear-gradient(var(--lumo-shade-5pct), var(--lumo-shade-5pct)));
+}
