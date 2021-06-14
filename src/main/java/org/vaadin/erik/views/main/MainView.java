@@ -11,7 +11,7 @@ import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.tabs.Tabs;
-import org.vaadin.erik.theme.Theme;
+import org.vaadin.erik.theme.ThemeVariant;
 import org.vaadin.erik.theme.ThemeSelector;
 import org.vaadin.erik.theme.ThemeUtil;
 
@@ -51,8 +51,8 @@ public class MainView extends AppLayout {
         logoLayout.setId("logo");
         logoLayout.setAlignItems(FlexComponent.Alignment.CENTER);
 
-        Image logo = new Image(getLogoSrc(ThemeUtil.getCurrentTheme()), "Dynamic Theme Demo logo");
-        ThemeUtil.addThemeChangeListener(UI.getCurrent(), t -> logo.setSrc(getLogoSrc(t)));
+        Image logo = new Image(getLogoSrc(ThemeUtil.getCurrentThemeVariant()), "Dynamic Theme Demo logo");
+        ThemeUtil.addThemeChangedListener(UI.getCurrent(), e -> logo.setSrc(getLogoSrc(e.getThemeVariant())));
 
         logoLayout.add(logo);
         logoLayout.add(new H1("Dynamic Theme Demo"));
@@ -60,8 +60,8 @@ public class MainView extends AppLayout {
         return layout;
     }
 
-    private String getLogoSrc(Theme theme) {
-        if (theme == Theme.CARROT_INC) {
+    private String getLogoSrc(ThemeVariant themeVariant) {
+        if (themeVariant == ThemeVariant.CARROT_INC) {
             return "images/carrot_inc.png";
         }
         return "images/logo.png";

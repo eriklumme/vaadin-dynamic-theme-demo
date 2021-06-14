@@ -21,6 +21,8 @@ public class ThemeBoostrapListener implements VaadinServiceInitListener, IndexHt
 
     @Override
     public void modifyIndexHtmlResponse(IndexHtmlResponse indexHtmlResponse) {
-        indexHtmlResponse.getDocument().body().attr("theme", ThemeUtil.getCurrentTheme().getAttribute());
+        indexHtmlResponse.getDocument().body().attr(
+                ThemeUtil.THEME_ATTRIBUTE,
+                ThemeUtil.getCurrentThemeVariant().getAttribute());
     }
 }
