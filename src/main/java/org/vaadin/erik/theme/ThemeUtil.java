@@ -18,7 +18,7 @@ public class ThemeUtil {
     public static void selectThemeVariant(ThemeVariant themeVariant) {
         VaadinSession.getCurrent().setAttribute(THEME_ATTRIBUTE, themeVariant);
         UI ui = UI.getCurrent();
-        ui.getElement().setAttribute(THEME_ATTRIBUTE, themeVariant.name().toLowerCase());
+        ui.getElement().setAttribute(THEME_ATTRIBUTE, themeVariant.getAttribute());
         ComponentUtil.fireEvent(ui, new ThemeVariantChangedEvent(ui, themeVariant));
     }
 
