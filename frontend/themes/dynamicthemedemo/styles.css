@@ -1,6 +1,13 @@
 @import url('./views/main-view.css');
 @import url('lumo-css-framework/all-classes.css');
 
+:root {
+    --datepicker-overlay-background-image:
+            linear-gradient(var(--lumo-shade-5pct), var(--lumo-shade-5pct));
+    --navbar-background:
+            var(--lumo-base-color) linear-gradient(var(--lumo-contrast-5pct), var(--lumo-contrast-5pct));
+}
+
 body[theme~="carrot_inc"] {
     --yellow-carrot: #ffa84a;
     --orange-carrot: #d25700;
@@ -22,8 +29,8 @@ body[theme~="clean"] {
     --_lumo-button-color: black;
     --_lumo-button-primary-color: black;
 
-    --clean-navbar-before-background: none;
-    --clean-overlay-background-image: none;
+    --datepicker-overlay-background-image: none;
+    --navbar-background: none;
 }
 
 body[theme~="clean"] vaadin-tab[selected]{

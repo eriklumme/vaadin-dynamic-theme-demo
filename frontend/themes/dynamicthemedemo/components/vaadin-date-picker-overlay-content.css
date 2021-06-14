@@ -1,4 +1,3 @@
 :host {
-    background-image: var(--clean-overlay-background-image,
-        linear-gradient(var(--lumo-shade-5pct), var(--lumo-shade-5pct)));
+    background-image: var(--datepicker-overlay-background-image);
 }
